@@ -1,18 +1,20 @@
-'use strict';
+var TelegramBot = require('node-telegram-bot-api');
 
-const Telegram = require('telegram-node-bot'),
-  tg = new Telegram.Telegram('355175782:AAGYWffs0nDFNmfkF3hGm1KfRP03M1NZUFw', {
-    workers: 1
-  });
+var token = '355175782:AAGYWffs0nDFNmfkF3hGm1KfRP03M1NZUFw';
+// Setup polling way
+var bot = new TelegramBot(token, {polling: true});
 
-const DorController = require('./controllers/dor');
-const otherwiseController = require('./controllers/otherwise');
+// Matches /echo [whatever]
+bot.onText(/\/echo (.+)/, function (msg, match) {
+  var fromId = msg.from.id;
+  var resp = match[1];
+  bot.sendMessage(fromId, resp);
+});
 
-tg.router.when(new Telegram.TextCommand('/dor', 'dorCommand'), new DorController())
-  .otherwise(new otherwiseController());
-
-  tg.router.when(new Telegram.TextCommand('/sim', 'simCommand'), new DorController())
-    .otherwise(new otherwiseController());
-
-    tg.router.when(new Telegram.TextCommand('/não', 'naoCommand'), new DorController())
-      .otherwise(new otherwiseController());
+// Any kind of message
+bot.on('message', function (msg) {
+  var chatId = msg.chat.id;
+  // photo can be: a file path, a stream or a Telegram file_id
+  var photo = 'cats.png';
+  bot.sendPhoto(chatId, photo, {caption: 'Lovely kittens'});
+});

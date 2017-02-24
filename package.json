@@ -6,10 +6,18 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonathalimax/bot-helloworld.git"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonathalimax/bot-helloworld/issues"
+  },
+  "homepage": "https://github.com/jonathalimax/bot-helloworld#readme",
   "dependencies": {
-    "telegram-node-bot": "^4.0.5"
+    "node-telegram-bot-api": "^0.27.0"
   }
 }
