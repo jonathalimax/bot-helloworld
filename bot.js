@@ -9,7 +9,7 @@ console.log('bot server started...');
 bot.onText(/\/start/, function (msg, match) {
 
   var welcome = 'Seja bem vindo ao Bot de marcação de consulta da OdontoSystem';
-  welcome += 'Para mais informações acesse: www.odontosystem.com.br';
+  welcome += '\nPara mais informações acesse: www.odontosystem.com.br';
   bot.sendMessage(msg.chat.id, welcome).then(function () {
     // reply sent!
   });
