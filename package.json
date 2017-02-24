@@ -1,7 +1,6 @@
 {
-  "name": "hello-world",
+  "name": "marcacao-consulta",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,7 +8,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "description": "",
   "dependencies": {
-    "telegram-node-bot": "^4.0.5"
+    "node-telegram-bot-api": "^0.27.0"
   }
 }
